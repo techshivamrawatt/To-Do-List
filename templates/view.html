@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Your work</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Work</th>
+            <th>Action</th>
+        </tr>
+
+        {% for work in datas %}
+        <tr>
+            <td>{{ work[0] }}</td>
+            <td>{{ work[1] }}</td>
+            <td><a href="/delete/{{work[0]}}"><button>Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

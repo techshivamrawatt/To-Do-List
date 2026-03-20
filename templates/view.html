@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Your work</title>
+    <meta charset="UTF-8">
+    <title>Your Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 50px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 60%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0386cc;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 6px 12px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d32f2f;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Work</th>
-            <th>Action</th>
-        </tr>
+    <h1>Your Work List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Work</th>
+                <th>Action</th>
+            </tr>
+        </thead>
 
         {% for work in datas %}
-        <tr>
-            <td>{{ work[0] }}</td>
-            <td>{{ work[1] }}</td>
-            <td><a href="/delete/{{work[0]}}"><button>Delete</button></a></td>
-        </tr>
+        <tbody>
+            <tr>
+                <td>{{ work[0] }}</td>
+                <td>{{ work[1] }}</td>
+                <td><a href="/delete/{{work[0]}}"><button>Delete</button></a></td>
+            </tr>
+        </tbody>
         {% endfor %}
     </table>
 </body>
